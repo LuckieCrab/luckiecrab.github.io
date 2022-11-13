@@ -116,6 +116,12 @@ input p {
     margin: 16px;
     background-color: var(--raisin-black-2);
     border-radius: 10%;
+    box-shadow: 5px 5px 5px black;
+    transition: .3s;
+}
+
+.list-card:hover {
+    transform: scale(1.01);
 }
 
 .list-card img {

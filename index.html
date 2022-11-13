@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>LoonyGuesser</title>
+        <link rel="shortcut icon" href="/assets/i/loony.png">
+
+        <link rel="stylesheet" href="/assets/css/index.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+    </head>
+
+    <body style="--header-height:100px;">
+        <header>
+            <nav class="nav">
+                <div class="container">
+                    <div class="flexbox-nav">
+                        <ul class="nav-ul">
+                            <li><a href="/"><img src="/assets/i/loony.png" class="brand"></a></li>
+                            <li><a href="/" class="brand"><p>LoonyGuesser</p></a></li>
+                        </ul>
+
+                        <li>
+                            <form action="/game.html">                                
+                                <input type="submit" value="Start Game">
+                            </form>
+                        </li>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="list">
+                <div class="list-item">
+                    <div class="list-card">
+                        <div class="card-img">
+                            <img src="/assets/i/loony_world_overworld.png">
+                        </div>
+
+                        <div class="card-content">
+                            <h4>Overworld</h4>
+
+                            <p>Have you watched carefully during Loony's streams and videos? Do you recognize remarkable places such as the heart of the sea or the starter house? Try it in the overworld LoonyGuesser!</p>
+
+                            <form action="/game.html">
+                                <input type="submit" value="Try Now!">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-card">
+                        <div class="card-img">
+                            <img src="/assets/i/loony_world_nether.png">
+                        </div>
+
+                        <div class="card-content">
+                            <h4>Nether</h4>
+
+                            <p>Were you there, when Loony promised to stream that he'd never have to pick up a huge amount of lava and fill a pool with it? Have you seen the construction of the nether hub and beautiful firework show? Try your knowledge in the nether LoonyGuesser!</p>
+
+                            <form action="/game.html">
+                                <input type="hidden" name="d" value="nether">
+
+                                <input type="submit" value="Try Now!">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-card">
+                        <div class="card-img">
+                            <img src="/assets/i/loony_world_end.png">
+                        </div>
+
+                        <div class="card-content">
+                            <h4>End</h4>
+
+                            <p>Did you witness the destruction of the end island, and the construction of a beautiful statue of Loony holding a sword and trident? Try your knowledge in the End LoonyGuesser!</p>
+
+                            <form action="/game.html">
+                                <input type="hidden" name="d" value="end">
+
+                                <input type="submit" value="Try Now!">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/assets/js/themes.js"></script>
+    </body>
+</html>

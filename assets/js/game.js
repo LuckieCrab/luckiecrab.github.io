@@ -338,12 +338,12 @@ async function newGame () {
         next.classList.remove('active');
         endMapDiv.classList.remove('active');
 
-        await sleep(0.3);
+        await sleep(0.6);
 
         results.classList.add('active');
 
         totalSpan.innerText = totalScore;
-        highSpan.innerText = cookie;
+        highSpan.innerText = cookie || totalScore;
 
         if(broke == true) {
             highbroke.classList.add('active');

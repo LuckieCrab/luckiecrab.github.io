@@ -17,6 +17,12 @@ body {
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
     background-color: var(--raisin-black);
     overflow: hidden;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .container {
@@ -161,8 +167,11 @@ input p {
 }
 
 .card-content h4 {
-    font-size: 24px;
     font-weight: bold;
+    font-size: 36px;
+    margin: 16px 0 24px 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.6)
 }
 
 .card-content button {

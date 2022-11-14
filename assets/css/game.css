@@ -619,3 +619,22 @@ progress[value]::-webkit-progress-value {
     transform: scale(1.05);
     background-color: rgba(100, 150, 100, 0.9);
 }
+
+#full-i {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 8px;
+    opacity: 0;
+    transition: .3s;
+}
+
+#full-i p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#full-i.active {
+    opacity: 1;
+}

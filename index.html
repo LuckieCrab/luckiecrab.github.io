@@ -11,6 +11,8 @@
 
         <link rel="stylesheet" href="/assets/css/index.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
 
     <body style="--header-height:100px;">
@@ -37,6 +39,10 @@
                                 <input class="donate" type="submit" value="Donate" name="submit" alt="Donate">
                                 <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
                             </form>
+
+                            <form class="n" action="https://discord.gg/b7WpUgg7NC" target="_blank">
+                                <input class="discord" name="submit" src="/assets/i/discord.png" type="image">
+                            </form>
                         </li>
                     </div>
                 </div>
@@ -58,6 +64,10 @@
             </div>
 
             <div class="gallery-overlay">
+                <div id="full-i">
+                    <p>&#9432; Fullscreen is recommended. Press F11 to open fullscreen.</p>
+                </div>
+
                 <div class="container">
                     <div class="list">
                         <div class="list-item">
@@ -138,5 +148,6 @@
 
         <script src="/assets/js/themes.js"></script>
         <script src="/assets/js/gallery.js"></script>
+        <script src="/assets/js/fullscreen.js"></script>
     </body>
 </html>

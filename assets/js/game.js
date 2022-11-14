@@ -218,6 +218,7 @@ async function game() {
 
     await sleep(0.3);
 
+    $('#full-i').removeClass('active');
     screenshot.classList.add('active');
 
     document.startTimer(tDisplay);

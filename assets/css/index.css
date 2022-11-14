@@ -16,7 +16,7 @@ body {
     padding: 0;
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
     background-color: var(--raisin-black);
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .container {
@@ -50,7 +50,8 @@ body {
 .brand p {
     font-family: 'Orbitron', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 36px;
+    margin: 0;
     background: linear-gradient(90deg, var(--magenta-pantone), var(--baby-powder));
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -77,11 +78,20 @@ input {
     padding: 8px 16px;
     background-color: var(--magenta-pantone);
     color: var(--baby-powder);
+    box-shadow: 4px 4px 4px black;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: .3s ease;
     margin: auto;
+}
+
+input.donate {
+    padding-left: 36px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-image: url(/assets/i/paypal.png);
 }
 
 input:hover {
@@ -153,4 +163,61 @@ input p {
 
 .card-content button {
     margin: 32px auto;
+}
+
+form.n {
+    display: inline-block;
+    margin: 0 16px;
+}
+
+.buttons {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.buttons button {
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 8px;
+    background: none;
+}
+
+.buttons button img {
+    background: none;
+    padding: 0;
+    margin: 0;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.controls button img:hover {
+    transform: scale(1.05);
+}
+
+.controls button img:active {
+    transform: scale(0.95);
+}
+
+.gallery {
+    display: flex;
+    position: absolute;
+}
+
+.gallery img {
+    height: auto;
+    width: 100%;
+    transition: 2.3s ease-in-out;
+}
+
+.gallery img.scrollLeft {
+    margin-left: -100%;
+}
+
+.gallery-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
 }

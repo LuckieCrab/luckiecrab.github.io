@@ -67,7 +67,8 @@ body {
 .brand p {
     font-family: 'Orbitron', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 48px;
+    margin: 0;
     background: linear-gradient(90deg, var(--magenta-pantone), var(--baby-powder));
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -187,14 +188,6 @@ form {
     left: 0;
     bottom: 0;
     z-index: 2;
-}
-
-.controls button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 8px;
 }
 
 .controls button {

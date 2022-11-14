@@ -20,8 +20,18 @@
                         </ul>
 
                         <li>
-                            <form action="/game.html">                                
+                            <form class="n" action="/game.html">                                
                                 <input type="submit" value="Start Game">
+                            </form>
+                            
+                            <form class="n" action="https://www.paypal.com/donate/?hosted_button_id=RHC3737335SAQ" method="post" target="_top">
+                                <input type="hidden" name="business" value="luckiecrab@gmail.com">
+                                <input type="hidden" name="no_recurring" value="0">
+                                <input type="hidden" name="item_name" value="Friends of LoonyGuesser">
+                                <input type="hidden" name="item_number" value="LoonyGuesser">
+                                <input type="hidden" name="currency_code" value="EUR">
+                                <input class="donate" type="submit" value="Donate" name="submit" alt="Donate">
+                                <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
                             </form>
                         </li>
                     </div>
@@ -29,68 +39,100 @@
             </nav>
         </header>
 
-        <div class="container">
-            <div class="list">
-                <div class="list-item">
-                    <div class="list-card">
-                        <div class="card-img">
-                            <img src="/assets/i/loony_world_overworld.png">
+        <div class="gallery-holder">
+            <div class="gallery">
+                <img class="gallery-img">
+                <img class="gallery-img">
+                <img class="gallery-img">
+                <img class="gallery-img">
+                <img class="gallery-img">
+                <img class="gallery-img">
+                <img class="gallery-img">
+                <img class="gallery-img">
+                <img class="gallery-img">
+                <img class="gallery-img">
+            </div>
+
+            <div class="gallery-overlay">
+                <div class="container">
+                    <div class="list">
+                        <div class="list-item">
+                            <div class="list-card">
+                                <div class="card-img">
+                                    <img src="/assets/i/loony_world_overworld.png">
+                                </div>
+        
+                                <div class="card-content">
+                                    <h4>Overworld</h4>
+        
+                                    <p>Have you watched carefully during Loony's streams and videos? Do you recognize remarkable places such as the heart of the sea or the starter house? Try it in the overworld LoonyGuesser!</p>
+        
+                                    <form action="/game.html">
+                                        <input type="submit" value="Try Now!">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="card-content">
-                            <h4>Overworld</h4>
-
-                            <p>Have you watched carefully during Loony's streams and videos? Do you recognize remarkable places such as the heart of the sea or the starter house? Try it in the overworld LoonyGuesser!</p>
-
-                            <form action="/game.html">
-                                <input type="submit" value="Try Now!">
-                            </form>
+        
+                        <div class="list-item">
+                            <div class="list-card">
+                                <div class="card-img">
+                                    <img src="/assets/i/loony_world_nether.png">
+                                </div>
+        
+                                <div class="card-content">
+                                    <h4>Nether</h4>
+        
+                                    <p>Were you there, when Loony promised to stream that he'd never have to pick up a huge amount of lava and fill a pool with it? Have you seen the construction of the nether hub and beautiful firework show? Try your knowledge in the nether LoonyGuesser!</p>
+        
+                                    <form action="/game.html">
+                                        <input type="hidden" name="d" value="nether">
+        
+                                        <input type="submit" value="Try Now!">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="list-card">
-                        <div class="card-img">
-                            <img src="/assets/i/loony_world_nether.png">
-                        </div>
-
-                        <div class="card-content">
-                            <h4>Nether</h4>
-
-                            <p>Were you there, when Loony promised to stream that he'd never have to pick up a huge amount of lava and fill a pool with it? Have you seen the construction of the nether hub and beautiful firework show? Try your knowledge in the nether LoonyGuesser!</p>
-
-                            <form action="/game.html">
-                                <input type="hidden" name="d" value="nether">
-
-                                <input type="submit" value="Try Now!">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="list-card">
-                        <div class="card-img">
-                            <img src="/assets/i/loony_world_end.png">
-                        </div>
-
-                        <div class="card-content">
-                            <h4>End</h4>
-
-                            <p>Did you witness the destruction of the end island, and the construction of a beautiful statue of Loony holding a sword and trident? Try your knowledge in the End LoonyGuesser!</p>
-
-                            <form action="/game.html">
-                                <input type="hidden" name="d" value="end">
-
-                                <input type="submit" value="Try Now!">
-                            </form>
+        
+                        <div class="list-item">
+                            <div class="list-card">
+                                <div class="card-img">
+                                    <img src="/assets/i/loony_world_end.png">
+                                </div>
+        
+                                <div class="card-content">
+                                    <h4>End</h4>
+        
+                                    <p>Did you witness the destruction of the end island, and the construction of a beautiful statue of Loony holding a sword and trident? Try your knowledge in the End LoonyGuesser!</p>
+        
+                                    <form action="/game.html">
+                                        <input type="hidden" name="d" value="end">
+        
+                                        <input type="submit" value="Try Now!">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="buttons">
+            <button class="copyright btn">
+                <a href="/copyright.html">
+                    <img src="/assets/i/copyright.png">
+                </a>
+            </button>
+
+            <button class="faq btn">
+                <a href="/faq.html">
+                    <img src="/assets/i/question.png">
+                </a>
+            </button>
+        </div>
+
         <script src="/assets/js/themes.js"></script>
+        <script src="/assets/js/gallery.js"></script>
     </body>
 </html>

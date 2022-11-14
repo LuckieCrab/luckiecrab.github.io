@@ -1,0 +1,82 @@
+body {
+    overflow-x: hidden !important;
+    overflow: auto !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 12px;
+}
+
+.head {
+    height: var(--header-height);
+}
+
+.header {
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+}
+
+.header h1 {
+    color: white;
+    font-size: 48px;
+    margin: 8px;
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+}
+
+.header a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header a:hover {
+    color: rgba(200, 200, 255, 0.9);
+}
+
+.faq {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin: 128px;
+}
+
+.support {
+    margin: 256px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+}
+
+.support h4 {
+    margin: 16px;
+}
+
+.support-server {
+    background-color: #454FBF;
+    border-color: #454FBF;
+    background-image: url(/assets/i/discord.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: 8px 5px;
+    padding-left: 38px;
+}

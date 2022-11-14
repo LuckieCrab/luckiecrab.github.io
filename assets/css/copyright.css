@@ -1,0 +1,129 @@
+body {
+    overflow-x: hidden !important;
+    overflow: auto !important;
+}
+
+.discord {
+    width: 21x;
+    height: 21px;
+    object-fit: cover;
+    background-color: #454FBF;
+    border-color: #454FBF;  
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 12px;
+}
+
+.head {
+    min-height: var(--header-height);
+}
+
+.disclaimer {
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+}
+
+.disclaimer h1 {
+    color: white;
+    font-size: 64px;
+    margin: 16px;
+}
+
+.disclaimer p {
+    margin: 0;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.profile {
+    margin: 48px auto 16px auto;
+    background-color: rgba(200, 200, 200, 0.8);
+    border-radius: 16px;
+    display: inline-block;
+    background-image: url(/assets/i/dirt.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.p-overlay {
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgba(50, 50, 50, 0.35);
+}
+
+.info p {
+    color: white;
+}
+
+.profile-buttons {
+    margin: 8px;
+}
+
+.pfp-img img {
+    border-radius: 50%;
+    border: 3px solid var(--magenta-pantone);
+}
+
+.coffee {
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+    cursor: pointer;
+    margin: 8px auto;
+}
+
+form.p {
+    margin: 0;
+}
+
+.st-top {
+    display: none;
+}
+
+.info p {
+    font-size: 16px;
+    font-weight: bold;
+    word-break: break-all;
+    margin: 8px;
+    margin-top: 16px;
+}
+
+.geo {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    width: 50%;
+    margin: 128px auto;
+}
+
+.geo h1 {
+    font-size: 32px;
+    color: white;
+    margin: 8px;
+}
+
+.loonyguesser {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    width: 50%;
+    margin: 256px auto 64px auto;
+}

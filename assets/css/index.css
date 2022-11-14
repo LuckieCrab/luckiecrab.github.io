@@ -221,3 +221,7 @@ form.n {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+.veryImportant {
+    margin: auto;
+}

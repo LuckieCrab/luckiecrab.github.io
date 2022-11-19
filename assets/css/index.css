@@ -221,6 +221,7 @@ form.n {
 }
 
 .gallery img {
+    filter: blur(2px);
     height: auto;
     width: 100%;
     transition: 2.3s ease-in-out;

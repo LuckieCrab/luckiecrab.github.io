@@ -1,12 +1,19 @@
 /* example functionality */
+
+const colors = [
+    267,
+    333,
+    208
+]
+
 $( document ).ready(function() {
     $("#d").fireworks();
     jQuery("#d").before(jQuery("canvas")); 
   });
   
   (function( $ ) {
-      var MAX_ROCKETS = 5,
-          MAX_PARTICLES = 500;
+      var MAX_ROCKETS = 7,
+          MAX_PARTICLES = 700;
   
       var FUNCTIONS = {
           'init': function(element) {
@@ -235,19 +242,19 @@ $( document ).ready(function() {
               }]
           );
   
-          this.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
+          this.explosionColor = colors[Math.floor(Math.random() * colors.length)];
           this.vel.y = Math.random() * -3 - 4;
           this.vel.x = Math.random() * 6 - 3;
           this.size = 2;
-          this.shrink = 0.999;
-          this.gravity = 0.01;
+          this.shrink = 1.001;
+          this.gravity = 0.005;
       }
   
       Rocket.prototype = new Particle();
       Rocket.prototype.constructor = Rocket;
   
       Rocket.prototype.explode = function(data) {
-          var count = Math.random() * 10 + 80;
+          var count = Math.random() * 10 + 120;
   
           for (var i = 0; i < count; i++) {
               var particle = new Particle(this.pos);
@@ -259,11 +266,11 @@ $( document ).ready(function() {
               particle.vel.x = Math.cos(angle) * speed;
               particle.vel.y = Math.sin(angle) * speed;
   
-              particle.size = 10;
+              particle.size = 11;
   
-              particle.gravity = 0.2;
-              particle.resistance = 0.92;
-              particle.shrink = Math.random() * 0.05 + 0.93;
+              particle.gravity = 0.05;
+              particle.resistance = 0.95;
+              particle.shrink = Math.random() * 0.04 + 0.95;
   
               particle.flick = true;
               particle.color = this.explosionColor;

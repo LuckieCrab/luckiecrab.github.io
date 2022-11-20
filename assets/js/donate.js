@@ -242,7 +242,7 @@ $( document ).ready(function() {
               }]
           );
   
-          this.explosionColor = colors[Math.floor(Math.random() * colors.length)];
+          this.explosionColor = colors;
           this.vel.y = Math.random() * -3 - 4;
           this.vel.x = Math.random() * 6 - 3;
           this.size = 2;
@@ -254,7 +254,7 @@ $( document ).ready(function() {
       Rocket.prototype.constructor = Rocket;
   
       Rocket.prototype.explode = function(data) {
-          var count = Math.random() * 10 + 120;
+          var count = Math.random() * 10 + 150;
   
           for (var i = 0; i < count; i++) {
               var particle = new Particle(this.pos);
@@ -273,7 +273,7 @@ $( document ).ready(function() {
               particle.shrink = Math.random() * 0.04 + 0.95;
   
               particle.flick = true;
-              particle.color = this.explosionColor;
+              particle.color = this.explosionColor[Math.floor(Math.random() * this.explosionColor.length)];
   
               data.particles.push(particle);
           }

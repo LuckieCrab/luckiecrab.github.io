@@ -13,7 +13,7 @@ $( document ).ready(function() {
   
   (function( $ ) {
       var MAX_ROCKETS = 7,
-          MAX_PARTICLES = 700;
+          MAX_PARTICLES = 1000;
   
       var FUNCTIONS = {
           'init': function(element) {

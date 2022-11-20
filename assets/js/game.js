@@ -350,6 +350,9 @@ async function newGame () {
             highbroke.classList.add('active');
         } else high.classList.add('active')
 
+        $("#endscreen").fireworks();
+        jQuery("#endscreen").before(jQuery("canvas")); 
+
         await sleep(0.3);
 
         return stats.classList.add('active');

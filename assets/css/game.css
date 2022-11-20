@@ -638,3 +638,8 @@ progress[value]::-webkit-progress-value {
 #full-i.active {
     opacity: 1;
 }
+
+canvas {
+    height: 100vh;
+    pointer-events: none;
+}

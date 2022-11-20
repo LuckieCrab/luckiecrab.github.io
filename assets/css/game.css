@@ -55,19 +55,21 @@ body {
 
 .nav li {
     text-decoration: none;
-    display: inline;
+    display: flex;
 }
 
 .nav li a {
     height: 75px;
     width: auto;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .brand p {
     font-family: 'Orbitron', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 36px;
     margin: 0;
     background: linear-gradient(90deg, var(--magenta-pantone), var(--baby-powder));
     background-clip: text;
@@ -81,6 +83,11 @@ img.brand {
     border-radius: 50%;
 }
 
+form {
+    margin: 32px;
+    display: flex;
+}
+
 input {
     appearance: button;
     -webkit-appearance: button;
@@ -91,11 +98,21 @@ input {
     padding: 8px 16px;
     background-color: var(--magenta-pantone);
     color: var(--baby-powder);
+    box-shadow: 4px 4px 4px black;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: .3s ease;
+    object-fit: cover;
     margin: auto;
+}
+
+input.donate {
+    padding-left: 36px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-image: url(/assets/i/paypal.png);
 }
 
 input:hover {
@@ -115,8 +132,12 @@ input p {
     background-color: var(--rgb-raisin-black-2);
 }
 
-form {
-    margin: 32px;
+.discord {
+    width: 21x;
+    height: 21px;
+    object-fit: cover;
+    background-color: #454FBF;
+    border-color: #454FBF;  
 }
 
 .full-screen {
@@ -253,7 +274,8 @@ form {
     width: 400px;
     height: 400px;
     overflow: hidden;
-    border: 1px solid black;
+    border: 3px solid rgba(25, 25, 25, 0.7);
+    border-radius: 16px;
     transition: .3s;
     background-color: var(--raisin-black-2);
 }
@@ -276,6 +298,7 @@ form {
     width: 100%;
     z-index: 99;
     background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 12px 12px 0 0;
     transition: .6s;
     pointer-events: none;
 }

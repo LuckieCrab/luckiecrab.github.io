@@ -8,12 +8,14 @@
 }
 
 .header h1 {
-    color: white;
+    color: rgba(254, 252, 249, 0.6);
     font-size: 48px;
+    text-shadow: 0 0 10px rgba(254, 252, 249, 0.6), 0 0 20px rgba(254, 252, 249, 0.6), 0 0 30px rgba(222, 57, 130, 0.6), 0 0 40px rgba(222, 57, 130, 0.6), 0 0 50px rgba(222, 57, 130, 0.6), 0 0 60px rgba(222, 57, 130, 0.6), 0 0 70px rgba(222, 57, 130, 0.6);
 }
 
 .header p {
     color: rgba(200, 200, 200, 0.9);
+    text-shadow: 3px 3px 3px rgba(200, 200, 200, 0.6);
     font-size: 22px;
 }
 

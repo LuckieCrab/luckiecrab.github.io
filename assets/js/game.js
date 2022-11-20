@@ -266,7 +266,7 @@ async function submit () {
 
     dScore = maxScore - Math.expm1(distance / 5000) * 3000;
 
-    endScore = (dScore + (endTime * 15));
+    endScore = (dScore - (endTime * 15));
 
     if(endScore < minScore) endScore = minScore;
 
@@ -363,6 +363,7 @@ async function newGame () {
     score.classList.remove('active');
     next.classList.remove('active');
     endMapDiv.classList.remove('active');
+    tDisplay.innerText = "00:00";
 
     await sleep(0.6);
 

@@ -64,12 +64,31 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    margin-left: 87px;
+    transition: .3s ease;
 }
 
-img.brand {
+div.brand {
+    display: flex;
+    align-items: center;
     height: 75px;
-    width: auto;
+    width: 75px;
+    margin: 4px;
     border-radius: 50%;
+    background-image: url(/assets/i/loony.png);
+    background-size: 75px;
+    transition: .3s ease;
+}
+
+.brand:hover {
+    background-image: url(/assets/i/loony2.png);
+    transform: scale(1.05);
+}
+
+.nav-btns {
+    display: flex;
+    align-items: center;
+    height: 75px;
 }
 
 form {

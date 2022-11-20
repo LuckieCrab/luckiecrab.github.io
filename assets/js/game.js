@@ -28,6 +28,7 @@ const totalSpan = document.querySelector('.total');
 const highSpan = document.querySelector('.highscore');
 const high = document.querySelector('#high');
 const highbroke = document.querySelector('#highbroke');
+const notif = document.querySelector('#notif-template');
 let gameCount = 1;
 let totalScore = 0;
 const screenshotThreshold = {
@@ -272,6 +273,10 @@ async function submit () {
 
     totalScore = totalScore + Number(endScore.toFixed());
 
+    if(distance < 100) achievement("soClose");
+    if(distance > 5000) achievement("soFar");
+    if(endScore < minScore) achievement("underMin");
+
     distanceSpan.innerText = distance + " blocks";
     pointsSpan.innerText = endScore.toFixed();
 
@@ -326,7 +331,8 @@ async function newGame () {
         if(cookie != "") {
             if(totalScore >= cookie) {
                 broke = true;
-                setCookie('highscore', totalScore)
+                setCookie('highscore', totalScore);
+                achievement('newHigh')
             }
         } else {
             broke = false;
@@ -399,4 +405,103 @@ async function newGame () {
     screenshot.classList.add('active');
 
     document.startTimer(tDisplay);
+
+    await sleep(2);
+
+    let feedback = getCookie('feedback');
+
+    if(feedback != "true") {
+        let random = Math.random() * 15;
+
+        if(random == 7) {
+            notification('feedback', 'Send your opinion', '<a style="color:rgba(255, 255, 255, 0.7);text-decoration:underline;cursor:pointer;" href="/feedback.html" target="_blank">Give feedback</a>', 7)
+        }
+    }
+}
+
+async function notification (type, title, content, t) {
+    let types = {
+        question: "/question.png",
+        achievement: "/achievement.png",
+        warning: "/warning.png",
+        feedback: "/message.png"
+    }
+
+    let notifCheck = document.querySelector('#notification');
+
+    if(notifCheck) {
+        await sleep(1);
+
+        return notification(type, title, content, t);
+    }
+
+    var clone = notif.cloneNode(true);
+
+    clone.id = "notification";
+
+    clone.children[0].children[0].children[0].src = `/assets/i${types[type] ? types[type] : "/question.png"}`;
+    clone.children[0].children[1].children[0].innerHTML = title;
+    clone.children[0].children[1].children[1].innerHTML = content;
+
+    notif.after(clone);
+
+    document.querySelector(':root').style.setProperty('--max-width-notif', clone.children[0].children[1].clientWidth + "px");
+    clone.children[0].children[1].classList.add('inactive');
+
+    await sleep(.7);
+
+    clone.classList.add('active');
+
+    await sleep(.35);
+
+    clone.children[0].children[1].classList.remove('inactive');
+
+    await sleep(.7);
+    await sleep(t)
+
+    clone.children[0].children[1].classList.add('inactive');
+
+    await sleep(.35);
+
+    clone.classList.remove('active');
+
+    await sleep(.7);
+
+    return document.querySelector('#notification').remove();
+}
+
+async function achievement (a) {
+    let codes = {
+        soClose: "1",
+        soFar: "2",
+        newHigh: "3",
+        underMin: "4"
+    }
+
+    let achievementText = {
+        soClose: "So Close; guess within 100 blocks of the location.",
+        soFar: "So Far; guess further than 5000 blocks away from the location.",
+        newHigh: "New Highscore; break your high score.",
+        underMin: "Under Minimum; reach a score that's less than the minimum."
+    }
+
+    let code = codes[a];
+
+    if(!code) return;
+
+    let achievements = getCookie('achievements');
+
+    if(achievements && achievements != "") {
+        let achievementsGotten = achievements.split();
+
+        if(achievementsGotten.includes(code)) return;
+
+        setCookie('achievements', achievements + code);
+
+        return notification("achievement", "Achievement Unlocked!", achievementText[a], 7);
+    }
+
+    setCookie('achievements', code);
+
+    return notification("achievement", "Achievement Unlocked!", achievementText[a], 7);
 }

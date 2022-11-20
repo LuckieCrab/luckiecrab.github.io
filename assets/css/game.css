@@ -75,12 +75,31 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    margin-left: 87px;
+    transition: .3s ease;
 }
 
-img.brand {
+div.brand {
+    display: flex;
+    align-items: center;
     height: 75px;
-    width: auto;
+    width: 75px;
+    margin: 4px;
     border-radius: 50%;
+    background-image: url(/assets/i/loony.png);
+    background-size: 75px;
+    transition: .3s ease;
+}
+
+.brand:hover {
+    background-image: url(/assets/i/loony2.png);
+    transform: scale(1.05);
+}
+
+.nav-btns {
+    display: flex;
+    align-items: center;
+    height: 75px;
 }
 
 form {
@@ -665,4 +684,76 @@ progress[value]::-webkit-progress-value {
 canvas {
     height: 100vh;
     pointer-events: none;
+}
+
+#notification {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 99;
+    margin-top: 64px;
+    transform: translateY(-128px);
+    transition: .7s ease-in-out;
+}
+
+#notif-template {
+    display: none;
+}
+
+#notification.active {
+    transform: translateY(0);
+}
+
+.notif {
+    margin: auto;
+    display: inline-flex;
+    border-radius: 64px;
+    height: 64px;
+    background-color: var(--raisin-black);
+}
+
+.notif-body {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: margin .7s ease-in-out, max-width .7s ease-in-out;
+}
+
+.notif-body.inactive {
+    max-width: 0;
+}
+
+.notif-body:not(.inactive) {
+    margin: 0 20px 0 0;
+    max-width: var(--max-width-notif);
+}
+
+.notif-body p {
+    margin: 0;
+}
+
+.notif-icon {
+    background-color: var(--raisin-black);
+    border-radius: 64px;
+}
+
+.notif-icon img {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+}
+
+.notif-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.notif-text {
+    color: rgba(255, 255, 255, 0.7);
 }

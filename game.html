@@ -19,28 +19,34 @@
                 <div class="container">
                     <div class="flexbox-nav">
                         <ul class="nav-ul">
-                            <li><a href="/"><img src="/assets/i/loony.png" class="brand"></a></li>
-                            <li><a href="/" class="brand"><p>LoonyGuesser</p></a></li>
+                            <li>
+                                <a href="/">
+                                    <div class="brand">
+                                        <p>LoonyGuesser</p>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
 
                         <li>
-                            <form class="n" action="/game.html">                                
-                                <input type="submit" value="Start Game">
-                            </form>
-                            
-                            <form class="n" action="https://www.paypal.com/donate/?hosted_button_id=RHC3737335SAQ" method="post" target="_top">
-                                <input type="hidden" name="business" value="luckiecrab@gmail.com">
-                                <input type="hidden" name="no_recurring" value="0">
-                                <input type="hidden" name="item_name" value="Friends of LoonyGuesser">
-                                <input type="hidden" name="item_number" value="LoonyGuesser">
-                                <input type="hidden" name="currency_code" value="EUR">
-                                <input class="donate" type="submit" value="Donate" name="submit" alt="Donate">
-                                <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-                            </form>
-
-                            <form class="n" action="https://discord.gg/b7WpUgg7NC" target="_blank">
-                                <input class="discord" name="submit" src="/assets/i/discord.png" type="image">
-                            </form>
+                            <div class="nav-btns">
+                                <form class="n" action="/game.html">                                
+                                    <input type="submit" value="Start Game">
+                                </form>
+                                
+                                <form class="n" action="https://www.paypal.com/donate/?hosted_button_id=RHC3737335SAQ" method="post" target="_top">
+                                    <input type="hidden" name="business" value="luckiecrab@gmail.com">
+                                    <input type="hidden" name="no_recurring" value="0">
+                                    <input type="hidden" name="item_name" value="Friends of LoonyGuesser">
+                                    <input type="hidden" name="item_number" value="LoonyGuesser">
+                                    <input type="hidden" name="currency_code" value="EUR">
+                                    <input class="donate" type="submit" value="Donate" name="submit" alt="Donate">
+                                </form>
+    
+                                <form class="n" action="https://discord.gg/b7WpUgg7NC" target="_blank">
+                                    <input class="discord" name="submit" src="/assets/i/discord.png" type="image">
+                                </form>
+                            </div>
                         </li>
                     </div>
                 </div>
@@ -154,6 +160,20 @@
 
                             <a class="newGame" href="/">New Game</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="notif-template">
+                <div class="notif">
+                    <div class="notif-icon">
+                        <img src="/assets/i/question.png">
+                    </div>
+
+                    <div class="notif-body" id="notif-template-body">
+                        <p class="notif-title">Example notif!</p>
+
+                        <p class="notif-text">You received an example notification!</p>
                     </div>
                 </div>
             </div>

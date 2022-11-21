@@ -29,6 +29,7 @@ const highSpan = document.querySelector('.highscore');
 const high = document.querySelector('#high');
 const highbroke = document.querySelector('#highbroke');
 const notif = document.querySelector('#notif-template');
+const body = document.body;
 let gameCount = 1;
 let totalScore = 0;
 const screenshotThreshold = {
@@ -410,14 +411,16 @@ async function newGame () {
 
     let feedback = getCookie('feedback');
 
-    if(feedback != "true") {
-        let random = Math.random() * 15;
+    if(feedback != "true" || !feedback) {
+        let random = Math.floor(Math.random() * 15);
 
         if(random == 7) {
-            notification('feedback', 'Send your opinion', '<a style="color:rgba(255, 255, 255, 0.7);text-decoration:underline;cursor:pointer;" href="/feedback.html" target="_blank">Give feedback</a>', 7)
+            notification('feedback', 'Send your opinion', '<a style="color:rgba(255, 255, 255, 0.7);text-decoration:underline;cursor:pointer;" href="/feedback.html?ref=ingame" target="_blank">Give feedback</a>', 7)
         }
     }
 }
+
+let clone;
 
 async function notification (type, title, content, t) {
     let types = {
@@ -427,7 +430,13 @@ async function notification (type, title, content, t) {
         feedback: "/message.png"
     }
 
-    let notifCheck = document.querySelector('#notification');
+    if(!clone) {
+        clone = notif.cloneNode(true);
+
+        clone.id = "notification";
+    }
+
+    let notifCheck = clone.children[0].children[1].classList.contains('inactive');
 
     if(notifCheck) {
         await sleep(1);
@@ -435,18 +444,20 @@ async function notification (type, title, content, t) {
         return notification(type, title, content, t);
     }
 
-    var clone = notif.cloneNode(true);
-
-    clone.id = "notification";
+    clone.children[0].children[1].classList.add('inactive');
 
     clone.children[0].children[0].children[0].src = `/assets/i${types[type] ? types[type] : "/question.png"}`;
     clone.children[0].children[1].children[0].innerHTML = title;
     clone.children[0].children[1].children[1].innerHTML = content;
 
-    notif.after(clone);
+    if(!document.getElementById('#notification')) {
+        notif.after(clone);
+    }
 
-    document.querySelector(':root').style.setProperty('--max-width-notif', clone.children[0].children[1].clientWidth + "px");
-    clone.children[0].children[1].classList.add('inactive');
+    body.style.setProperty('--max-width-notif', clone.children[0].children[1].clientWidth + "px");
+
+    clone.children[0].children[1].classList.remove('inactive');
+    clone.children[0].children[1].classList.add('prepare');
 
     await sleep(.7);
 
@@ -454,20 +465,24 @@ async function notification (type, title, content, t) {
 
     await sleep(.35);
 
-    clone.children[0].children[1].classList.remove('inactive');
+    clone.children[0].children[1].classList.add('active');
 
     await sleep(.7);
+
+    clone.children[0].children[1].classList.remove('prepare');
+
     await sleep(t)
 
-    clone.children[0].children[1].classList.add('inactive');
+    clone.children[0].children[1].classList.remove('active');
+    clone.children[0].children[1].classList.add('prepare');
 
     await sleep(.35);
 
     clone.classList.remove('active');
 
-    await sleep(.7);
-
-    return document.querySelector('#notification').remove();
+    await sleep(.7)
+    
+    clone.children[0].children[1].classList.remove('prepare');;
 }
 
 async function achievement (a) {
@@ -492,7 +507,7 @@ async function achievement (a) {
     let achievements = getCookie('achievements');
 
     if(achievements && achievements != "") {
-        let achievementsGotten = achievements.split();
+        let achievementsGotten = achievements.split("");
 
         if(achievementsGotten.includes(code)) return;
 

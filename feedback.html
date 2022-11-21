@@ -8,10 +8,10 @@
         <meta name="description" content="How well do you know remarkable places in Loony's season 1 world? Test your knowledge with LoonyGuesser!" />
         <meta name="robots" content= "index, follow">
 
-        <title>Copyright</title>
+        <title>Feedback</title>
         <link rel="shortcut icon" href="/assets/i/loony.png">
 
-        <link rel="stylesheet" href="/assets/css/copyright.css">
+        <link rel="stylesheet" href="/assets/css/feedback.css">
         <link rel="stylesheet" href="/assets/css/index.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
 
@@ -59,50 +59,21 @@
             </nav>
         </header>
 
-        <div class="container head">
-            <div class="disclaimer">
-                <h1>Disclaimer</h1>
+        <div class="fullscreen">
+            <div class="center">
+                <form action="https://loonyguesserapi.vercel.app/submitFeedback" method="GET" class="form">
+                    <input type="text" name="name" placeholder="Name" id="name" required>
 
-                <p>All branding, images, graphics, or any other element belonging to Loony is property of Loony. We use these because they are such recognizable, but we do not claim to own them. All rights for this content belong to Loony. </p>
-            
-                <div class="profile">
-                    <div class="p-overlay">
-                        <div class="pfp">
-                            <div class="pfp-img"></div>
-    
-                            <div class="profile-buttons">
-                                <div class="sharethis-inline-follow-buttons"></div>
-                            </div>
-                        </div>
-    
-                        <div class="info">
-                            <p>Loony is a Dutch gaming YouTuber <br>and artist whose videos revolve around Minecraft.</p>
-                        </div>
-    
-                        <div class="coffee">
-                            <form class="p" target="_blank" action="https://www.buymeacoffee.com/Loony">
-                                <input class="coffee" name="submit" type="image" src="/assets/i/buymeacoffee.png" style="width:150px;height:38px;">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <input type="email" name="email" placeholder="Email address" id="email" required>
 
-        <div class="geo">
-            <div class="g-disclaimer">
-                <h1>GeoGuesser</h1>
+                    <textarea class="textfield" placeholder="Your feedback" name="feedback" required></textarea>
 
-                <p>The idea behind LoonyGuesser might be recognized as the idea behind GeoGuesser, but LoonyGuesser is not affiliated or related to in any way with GeoGuesser. Please check out GeoGuesser if you are interested.</p>
-            </div>
-        </div>
-
-        <div class="loonyguesser">
-            <div class="lg-disclaimer">
-                <p>&copy; 2022 Copyright by Luckie Crab, with exception of content belonging to other parties.</p>
+                    <input type="submit" class="submit" value="Submit">
+                </form>
             </div>
         </div>
 
         <script src="/assets/js/themes.js"></script>
+        <script src="/assets/js/feedback.js"></script>
     </body>
 </html>

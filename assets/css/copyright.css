@@ -62,6 +62,20 @@ body {
     background-image: url(/assets/i/dirt.png);
     background-size: cover;
     background-repeat: no-repeat;
+    transition: .3s;
+    background-size: 100%;
+}
+
+.profile:hover {
+    transform: scale(1.05);
+    background-image: url(/assets/i/grass.png);
+    background-size: 100%;
+}
+
+.profile:hover .pfp-img {
+    transform: scale(1.05);
+    background-image: url(/assets/i/loony2.png);
+    
 }
 
 .p-overlay {
@@ -78,9 +92,16 @@ body {
     margin: 8px;
 }
 
-.pfp-img img {
+.pfp-img {
+    margin: auto;
+    width: 94px;
+    height: 94px;
+    background-image: url(/assets/i/loony.png);
+    background-size: 94px;
+    background-color: var(--raisin-black);
     border-radius: 50%;
     border: 3px solid var(--magenta-pantone);
+    transition: .3s ease;
 }
 
 .coffee {
@@ -88,8 +109,11 @@ body {
     border: none;
     background: none;
     box-shadow: none;
-    cursor: pointer;
     margin: 8px auto;
+}
+
+input.coffee {
+    cursor: pointer;
 }
 
 form.p {

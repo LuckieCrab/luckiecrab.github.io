@@ -693,7 +693,7 @@ canvas {
     text-align: center;
     z-index: 99;
     margin-top: 64px;
-    transform: translateY(-128px);
+    transform: translateY(-156px);
     transition: .7s ease-in-out;
 }
 
@@ -711,6 +711,7 @@ canvas {
     border-radius: 64px;
     height: 64px;
     background-color: var(--raisin-black);
+    border: 3px solid var(--magenta-pantone);
 }
 
 .notif-body {
@@ -724,10 +725,15 @@ canvas {
 }
 
 .notif-body.inactive {
-    max-width: 0;
+    max-width: max-content;
 }
 
-.notif-body:not(.inactive) {
+.notif-body.prepare {
+    max-width: 0;
+    margin: 0;
+}
+
+.notif-body.active {
     margin: 0 20px 0 0;
     max-width: var(--max-width-notif);
 }

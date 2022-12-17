@@ -236,6 +236,8 @@ input p {
     cursor: pointer;
     padding: 0;
     margin: 8px;
+    background-color: var(--raisin-black);
+    border-radius: 50%;
 }
 
 .controls button img {

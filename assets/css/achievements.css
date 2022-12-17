@@ -1,0 +1,71 @@
+body {
+    overflow: auto !important;
+}
+
+.achievements-container {
+    width: 70%;
+    margin: auto;
+}
+
+.achievements {
+    display: flex;
+    margin: 32px 0;
+}
+
+.achievements-head {
+    margin: 32px 0;
+    font-size: 28px;
+    color: var(--baby-powder);
+}
+
+.achievements {
+    display: flex;
+    flex-direction: column;
+}
+
+.achievement {
+    background-color: var(--raisin-black-2);
+    border-radius: 64px;
+    border: 2px solid var(--magenta-pantone);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    margin: 8px 0;
+}
+
+.icon .i {
+    width: 98px;
+    height: 98px;
+    background-image: url(/assets/i/achievement.png);
+    background-size: 98px;
+}
+
+.achievement.locked .i {
+    background-image: url(/assets/i/achievement-locked.png);
+}
+
+.achievement.locked {
+    border: 2px solid rgba(128, 128, 128, 255);
+    cursor: not-allowed;
+}
+
+.achievement-body h1, p {
+    margin: 0;
+}
+
+.achievement-body h1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+.achievement-body p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    margin: 8px 4px;
+}
+
+#achievement-template {
+    display: none;
+}

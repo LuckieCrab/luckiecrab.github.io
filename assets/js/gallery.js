@@ -55,4 +55,4 @@ async function scrollGallery () {
     newGallery.insertBefore(newChildren[0], newChildren[newChildren.length]);
 }
 
-let galleryScroll = setInterval(scrollGallery, 7000);
+let galleryScroll = setInterval(scrollGallery, 3500);

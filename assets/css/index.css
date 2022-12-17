@@ -65,6 +65,7 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     margin-left: 87px;
+    padding: 16px 0;
     transition: .3s ease;
 }
 
@@ -173,6 +174,24 @@ input p {
     mask-image: linear-gradient(to bottom, var(--raisin-black-2) 50%, transparent 100%);
 }
 
+.list-card .inf {
+    display: inline;
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 12px;
+    border: 1px solid;
+}
+
+.inf[data-type="easy"] {
+    background-color: rgba(50, 255, 50, 0.2);
+    border-color: rgba(50, 255, 50, 0.6);
+}
+
+.inf[data-type="precision"] {
+    background-color: rgba(255, 50, 50, 0.2);
+    border-color: rgba(255, 50, 50, 0.6);
+}
+
 .card-img { 
     margin: auto;
     text-align: center;
@@ -188,9 +207,13 @@ input p {
 .card-content h4 {
     font-weight: bold;
     font-size: 36px;
-    margin: 16px 0 24px 0;
+    margin: 16px 0 12px 0;
     text-transform: uppercase;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.6)
+}
+
+.card-content p {
+    margin-top: 14px;
 }
 
 .card-content button {
@@ -214,6 +237,16 @@ form.n {
     padding: 0;
     margin: 8px;
     background: none;
+    background-color: var(--raisin-black);
+    border-radius: 50%;
+}
+
+.buttons button:hover img {
+    transform: scale(1.05);
+}
+
+.buttons button:active img {
+    transform: scale(0.95);
 }
 
 .buttons button img {
@@ -280,4 +313,23 @@ form.n {
 
 #full-i.active {
     opacity: 1;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: var(--raisin-black-2);
+    position: absolute;
+    right: 0;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 16px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
 }

@@ -34,12 +34,9 @@ body {
 }
 
 .disclaimer {
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    position: absolute;
     text-align: center;
+    width: 65%;
+    margin: auto;
 }
 
 .disclaimer h1 {

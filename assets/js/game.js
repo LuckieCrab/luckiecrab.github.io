@@ -334,10 +334,12 @@ async function newGame () {
                 broke = true;
                 setCookie('highscore', totalScore);
                 achievement('newHigh')
-            }
-        } else {
+            } else broke = false;
+        } else broke = false;
+
+        if(!cookie || cookie == "") {
             broke = false;
-            setCookie("highscore", totalScore)
+            setCookie('highscore', totalScore);
         }
 
         endMarker.classList.remove('active');
@@ -490,14 +492,16 @@ async function achievement (a) {
         soClose: "1",
         soFar: "2",
         newHigh: "3",
-        underMin: "4"
+        underMin: "4",
+        wayTooClose: "5"
     }
 
     let achievementText = {
         soClose: "So Close; guess within 100 blocks of the location.",
         soFar: "So Far; guess further than 5000 blocks away from the location.",
         newHigh: "New Highscore; break your high score.",
-        underMin: "Under Minimum; reach a score that's less than the minimum."
+        underMin: "Under Minimum; reach a score that's less than the minimum.",
+        wayTooClose: "Way Too Close; guess within 10 blocks of the location."
     }
 
     let code = codes[a];

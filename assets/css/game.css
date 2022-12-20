@@ -765,3 +765,75 @@ canvas {
 .notif-text {
     color: rgba(255, 255, 255, 0.7);
 }
+
+
+#cookieconsent {
+    position: fixed;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: max-content;
+    background-color: var(--raisin-black-2);
+    border-radius: 16px;
+    box-shadow: 4px 4px 4px black;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease;
+    transform: translateY(64px);
+}
+
+#cookieconsent.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cookies h1, .cookies p {
+    margin: 0 16px;
+    padding: 0;
+    color: var(--baby-powder);
+}
+
+.cookies p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cookies {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+
+.cookies img {
+    width: 48px;
+    height: 48px;
+}
+
+.cookies button {
+    margin: 8px;
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 6px 12px;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.cookies button:hover {
+    transform: scale(1.02);
+}
+
+.consent {
+    background-color: var(--magenta-pantone);
+    color: var(--baby-powder);
+    box-shadow: 4px 4px 4px black;
+}
+
+.noConsent {
+    background: none;
+    color: rgba(255, 255, 255, 0.6);
+}

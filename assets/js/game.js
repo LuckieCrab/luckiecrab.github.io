@@ -96,6 +96,13 @@ document.querySelector(".nav").classList.add('hidden');
 function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";path=/";
 }
+
+window.addEventListener("beforeunload", function (e) {
+    var confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
+
+    (e || window.event).returnValue = confirmationMessage;
+    return confirmationMessage;
+});
   
 function getCookie(cname) {
     let name = cname + "=";

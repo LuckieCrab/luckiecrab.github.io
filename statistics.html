@@ -5,19 +5,16 @@
         <meta http-equiv=”Pragma” content=”no-cache”>
         <meta http-equiv=”Expires” content=”-1″>
         <meta http-equiv=”CACHE-CONTROL” content=”NO-CACHE”>
-        <meta name="description" content="How well do you know remarkable places in Loony's season 1 world? Test your knowledge with LoonyGuesser!" />
-        <meta name="robots" content= "index, follow">
 
-        <title>Copyright</title>
+        <title>Statistics</title>
         <link rel="shortcut icon" href="/assets/i/loony.png">
 
-        <link rel="stylesheet" href="/assets/css/copyright.css">
         <link rel="stylesheet" href="/assets/css/index.css">
+        <link rel="stylesheet" href="/assets/css/statistics.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=63729a21bbc41e001915da0e&product=inline-follow-buttons&source=platform" async="async"></script>    </head>
+    </head>
 
     <body style="--header-height:100px;">
         <header>
@@ -59,39 +56,53 @@
             </nav>
         </header>
 
-        <div class="container head">
-            <div class="disclaimer">
-                <h1>Disclaimer</h1>
+        <div class="main">
+            <div class="head">
+                <div class="stats">
+                    <div class="stat">
+                        <h1 id="points">---</h1>
 
-                <p>All branding, images, graphics, or any other element belonging to Loony is property of Loony. We use these because they are such recognizable, but we do not claim to own them. All rights for this content belong to Loony. </p>
-            
-                <div class="profile">
-                    <div class="p-overlay">
-                        <div class="pfp">
-                            <div class="pfp-img"></div>
-    
-                            <div class="profile-buttons">
-                                <div class="sharethis-inline-follow-buttons"></div>
-                            </div>
-                        </div>
-    
-                        <div class="info">
-                            <p>Loony is a Dutch gaming YouTuber <br>and artist whose videos revolve around Minecraft.</p>
-                        </div>
-    
-                        <div class="coffee">
-                            <form class="p" target="_blank" action="https://www.buymeacoffee.com/Loony">
-                                <input class="coffee" name="submit" type="image" src="/assets/i/buymeacoffee.png" style="width:150px;height:38px;">
-                            </form>
-                        </div>
+                        <p>points</p>
+                    </div>
+
+                    <div class="stat">
+                        <h1 id="highscore">---</h1>
+                        
+                        <p>highscore</p>
+                    </div>
+
+                    <div class="stat">
+                        <h1 id="rounds">---</h1>
+
+                        <p>rounds played</p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="loonyguesser">
-            <div class="lg-disclaimer">
-                <p>&copy; 2022 Copyright by Luckie Crab, with exception of content belonging to other parties.</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <h1 id="aDistance">---</h1>
+    
+                        <p class="unit">blocks</p>
+    
+                        <p>avg. distance</p>
+                    </div>
+    
+                    <div class="stat">
+                        <h1 id="aTime">---</h1>
+    
+                        <p class="unit">seconds</p>
+    
+                        <p>avg. time</p>
+                    </div>
+                    
+                    <div class="stat">
+                        <h1 id="aScore">---</h1>
+    
+                        <p class="unit">points</p>
+    
+                        <p>avg. score</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -137,6 +148,7 @@
         </div>
 
         <script src="/assets/js/themes.js"></script>
+        <script src="/assets/js/statistics.js"></script>
         <script src="/assets/js/cookieconsent.js"></script>
     </body>
 </html>

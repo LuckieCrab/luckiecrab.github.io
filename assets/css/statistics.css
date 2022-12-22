@@ -1,0 +1,43 @@
+body {
+    overflow-y: auto !important;
+}
+
+.head {
+    height: calc(var(--header-height) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: calc(var(--header-height) / 4) 0;
+}
+
+.stats {
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.stat {
+    text-align: center;
+    color: var(--baby-powder);
+    width: calc(100% / 4);
+}
+
+.stat h1 {
+    margin: 4px;
+    font-size: 64px;
+}
+
+.stat p {
+    margin: 8px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+.unit {
+    margin: 0 auto 18px auto !important;
+    font-size: 20px !important;
+    color: var(--baby-powder) !important;
+}

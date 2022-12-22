@@ -97,12 +97,12 @@ function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";path=/";
 }
 
-window.addEventListener("beforeunload", function (e) {
+function prevent(e) {
     var confirmationMessage = 'It looks like you have been editing something. ' + 'If you leave before saving, your changes will be lost.';
 
     (e || window.event).returnValue = confirmationMessage;
     return confirmationMessage;
-});
+}
   
 function getCookie(cname) {
     let name = cname + "=";
@@ -117,6 +117,12 @@ function getCookie(cname) {
       }
     }
     return "";
+}
+
+function setStat(sName, val) {
+    let result = getCookie(sName);
+
+    return result ? setCookie(sName, Number(result) + Number(val)) : setCookie(sName, Number(val));
 }
 
 document.startCountdown = async function(t, e) {
@@ -203,6 +209,12 @@ function randomScreenshot(dimension) {
 }
 
 async function game() {
+    let r = getCookie('cookies');
+
+    if(!r) return message.innerHTML = "Please accept cookies to continue!";
+
+    window.addEventListener("beforeunload", prevent);
+
     message.innerHTML = 'Are you ready?';
 
     await sleep(2);
@@ -285,6 +297,13 @@ async function submit () {
     if(distance > 5000) achievement("soFar");
     if(endScore < minScore) achievement("underMin");
 
+    setStat("distance", distance);
+    setStat("cDistance", 1);
+    setStat("score", endScore.toFixed());
+    setStat("cScore", 1);
+    setStat("time", endTime + 5);
+    setStat("cTime", 1);
+
     distanceSpan.innerText = distance + " blocks";
     pointsSpan.innerText = endScore.toFixed();
 
@@ -333,6 +352,8 @@ async function submit () {
 
 async function newGame () {
     if(gameCount >= 5) {
+        setStat('rounds', 1);
+
         let cookie = getCookie('highscore');
         let broke;
 
@@ -371,6 +392,10 @@ async function newGame () {
 
         await sleep(0.3);
 
+        window.removeEventListener("beforeunload", prevent);
+
+        totalScore = 0;
+
         return stats.classList.add('active');
     };
 
@@ -386,6 +411,7 @@ async function newGame () {
     endscreen.classList.remove('active');
 
     gameCount = gameCount + 1;
+    setStat('rounds', 1);
 
     center.classList.remove('inactive');
     message.innerHTML = `Round ${gameCount}`;
